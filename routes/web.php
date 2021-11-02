@@ -16,3 +16,4 @@
 });*/
 
 Route::get('/', 'PageController@loginn');
+Route::get('/post','PageController@Publish');
