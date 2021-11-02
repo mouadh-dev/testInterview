@@ -19,3 +19,5 @@ Route::get('/', 'PageController@loginn');
 Route::get('/post','PageController@Publish');
 Route::get('/create','PageController@create');
 Route::post('/store','PageController@store');
+Route::get('/edit/{id}','PageController@edit');
+Route::post('/update','PageController@update');

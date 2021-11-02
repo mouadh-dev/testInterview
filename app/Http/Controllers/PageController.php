@@ -22,4 +22,15 @@ class PageController extends Controller
         $data->save();
         return back();
     }
+    public function edit($id){
+        $row=Post::findOrFail($id);
+        return view ('editPost',compact('row'));
+    }
+    public function update(Request $request){
+        $data = Post::findOrFail($request->id);
+
+        $data->contenu = $request->editpost;
+        $data->save();
+        return back();
+    }
 }
