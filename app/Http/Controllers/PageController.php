@@ -13,4 +13,13 @@ class PageController extends Controller
         $posts = Post::all();
         return view('postView',compact('posts'));
     }
+    public function create(){
+        return view ('createPost');
+    }
+    public function store(Request $request){
+        $data = new Post();
+        $data->contenu = $request->postType;
+        $data->save();
+        return back();
+    }
 }
