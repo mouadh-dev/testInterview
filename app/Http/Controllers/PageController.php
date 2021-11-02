@@ -33,4 +33,9 @@ class PageController extends Controller
         $data->save();
         return back();
     }
+    public function remove($id){
+        $row=Post::findOrFail($id);
+        $row->delete();
+        return back();
+    }
 }

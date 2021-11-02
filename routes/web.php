@@ -21,3 +21,4 @@ Route::get('/create','PageController@create');
 Route::post('/store','PageController@store');
 Route::get('/edit/{id}','PageController@edit');
 Route::post('/update','PageController@update');
+Route::get('/remove/{id}','PageController@remove');
