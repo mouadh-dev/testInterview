@@ -1,3 +1,6 @@
+
+@extends('layouts.template')
+@section('content')
 <div>
     <form action="{{url('/store')}}" method="post">
         {!! csrf_field() !!} 
@@ -5,4 +8,4 @@
         <button type="submit">create</button>
     </form>
 </div>
-
+@stop
