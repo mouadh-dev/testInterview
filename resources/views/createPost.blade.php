@@ -4,8 +4,11 @@
 <div>
     <form action="{{url('/store')}}" method="post">
         {!! csrf_field() !!} 
-        <input type="text" name="postType">
+        <center>
+        <input type="text" name="contenu"><br><br>
         <button type="submit">create</button>
+        <br><br>
+        </center>
     </form>
 </div>
 @stop

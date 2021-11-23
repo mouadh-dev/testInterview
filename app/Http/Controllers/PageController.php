@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
+
 class PageController extends Controller
 {
-    public function loginn(){
-        return view ('authentication.login');
-    }
+    
     public function Publish(){
         $posts = Post::all();
         return view('postView',compact('posts'));
@@ -17,9 +17,10 @@ class PageController extends Controller
         return view ('createPost');
     }
     public function store(Request $request){
-        $data = new Post();
-        $data->contenu = $request->postType;
-        $data->save();
+        $post = new Post();
+        $post->contenu = $request->contenu;
+        $post->user_id = auth()->user()->id;
+        $post->save();
         return back();
     }
     public function edit($id){
@@ -38,4 +39,9 @@ class PageController extends Controller
         $row->delete();
         return back();
     }
+
+    // public function logout(){
+    //     Auth::logout();
+    //     return redirect(url('/login'));
+    // }
 }

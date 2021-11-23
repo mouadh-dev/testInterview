@@ -12,11 +12,15 @@ text-align: center;
     
 <tbody>
  @foreach ($posts as $post)   
-<!-- <tr>
+<tr>
      <td>
-         {{$post->username}}
+        @foreach ($users as $user)
+        @if($post->userid = $user->id)
+         {{$user->name}}
+         @endif
+         @endforeach
      </td>
- </tr> -->
+ </tr>
  <tr>
      <td>{{$post->id}}</td>
      <td>{{$post->contenu}}</td>
