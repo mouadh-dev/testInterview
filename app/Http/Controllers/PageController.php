@@ -16,10 +16,14 @@ class PageController extends Controller
     public function create(){
         return view ('createPost');
     }
+    public function profil(){
+        $user = Auth::user();
+        return view ('profil', compact('user'));
+    }
     public function store(Request $request){
         $post = new Post();
         $post->contenu = $request->contenu;
-        $post->user_id = auth()->user()->id;
+        $post->userid = auth()->user()->id;
         $post->save();
         return back();
     }
@@ -44,4 +48,5 @@ class PageController extends Controller
     //     Auth::logout();
     //     return redirect(url('/login'));
     // }
+    
 }

@@ -15,14 +15,14 @@ text-align: center;
 <tr>
      <td>
         @foreach ($users as $user)
-        @if($post->userid = $user->id)
+        @if($user->id = $post->userid)
          {{$user->name}}
          @endif
          @endforeach
      </td>
  </tr>
  <tr>
-     <td>{{$post->id}}</td>
+     {{-- <td>{{$post->id}}</td> --}}
      <td>{{$post->contenu}}</td>
      
  </tr>

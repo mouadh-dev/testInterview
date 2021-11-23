@@ -21,13 +21,14 @@ use Illuminate\Support\Facades\Route;
 ##Route::get('/', 'PageController@loginn');
 
 
-Route::get('/post','PageController@Publish');
+//Route::get('/post','PageController@Publish');
 Route::get('/create','PageController@create');
 Route::post('/store','PageController@store');
 Route::get('/edit/{id}','PageController@edit');
 Route::post('/update','PageController@update');
 Route::get('/remove/{id}','PageController@remove');
 Route::get('/logout','PageController@logout');
+Route::get('/profil','PageController@profil');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
